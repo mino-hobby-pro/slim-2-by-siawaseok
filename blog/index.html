@@ -35,18 +35,20 @@
 
         .account-section {
             display: flex;
-            justify-content: space-around;
+            justify-content: center; /* 中央揃え */
             margin: 20px 0;
+            flex-wrap: wrap; /* ボタンを折り返す */
         }
 
         button {
-            padding: 10px 20px;
+            padding: 12px 25px; /* ボタンのパディングを調整 */
             font-size: 16px;
             color: white;
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            transition: background-color 0.3s;
+            transition: background-color 0.3s, transform 0.2s; /* ホバー時のエフェクトを追加 */
+            margin: 5px; /* ボタンの間隔を追加 */
         }
 
         #registerButton, #loginButton, #profileButton, #friendsListButton {
@@ -63,6 +65,7 @@
 
         button:hover {
             opacity: 0.9;
+            transform: scale(1.05); /* ホバー時に少し拡大 */
         }
 
         .blog-section {
@@ -117,6 +120,25 @@
             margin-top: 20px;
             font-size: 0.9em;
             color: #657786;
+        }
+
+        /* Cookieのスタイル */
+        #cookie-notice {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: white;
+            padding: 15px;
+            border: 1px solid #e1e8ed;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+
+        .cookie-notice button {
+            margin: 0 5px;
         }
     </style>
     <script type="module">
